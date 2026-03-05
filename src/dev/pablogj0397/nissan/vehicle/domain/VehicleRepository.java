@@ -1,0 +1,7 @@
+package dev.pablogj0397.nissan.vehicle.domain;
+
+import java.util.ArrayList;
+
+public interface VehicleRepository {
+    public ArrayList<Vehicle> findAll();
+}

@@ -6,8 +6,22 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class VehicleMemLocalDataSource {
+    private static VehicleMemLocalDataSource instance;
 
     private ArrayList<Vehicle> storage = new ArrayList<>();
+
+    private VehicleMemLocalDataSource(){initData();}
+
+    public void initData(){
+       storage.add(new Vehicle("1","Alfa","White","2001", "11.000"));
+    }
+
+    public static VehicleMemLocalDataSource getInstance(){
+        if (instance == null){
+            instance = new VehicleMemLocalDataSource();
+        }
+        return instance;
+    }
 
     public ArrayList<Vehicle> findAll() {
         return storage;
