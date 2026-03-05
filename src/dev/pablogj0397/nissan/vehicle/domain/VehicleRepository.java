@@ -4,4 +4,5 @@ import java.util.ArrayList;
 
 public interface VehicleRepository {
     public ArrayList<Vehicle> findAll();
+    public void saveVehicle(Vehicle vehicle);
 }
