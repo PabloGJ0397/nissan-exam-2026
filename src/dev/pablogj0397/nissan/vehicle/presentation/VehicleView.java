@@ -2,6 +2,7 @@ package dev.pablogj0397.nissan.vehicle.presentation;
 
 import dev.pablogj0397.nissan.vehicle.data.VehicleDataRepository;
 import dev.pablogj0397.nissan.vehicle.data.VehicleMemLocalDataSource;
+import dev.pablogj0397.nissan.vehicle.domain.DeleteVehicleUseCase;
 import dev.pablogj0397.nissan.vehicle.domain.GetVehiclesUseCase;
 import dev.pablogj0397.nissan.vehicle.domain.SaveVehicleUseCase;
 import dev.pablogj0397.nissan.vehicle.domain.Vehicle;
@@ -18,5 +19,10 @@ public class VehicleView {
         Vehicle vehicleTest = new Vehicle("1","Alfa","White","2001", "11.000");
         SaveVehicleUseCase saveVehicleUseCase = new SaveVehicleUseCase(new VehicleDataRepository(VehicleMemLocalDataSource.getInstance()));
         saveVehicleUseCase.execute(vehicleTest);
+    }
+
+    public static void deleteVehicle(String vehicleId){
+        DeleteVehicleUseCase deleteVehicleUseCase = new DeleteVehicleUseCase(new VehicleDataRepository(VehicleMemLocalDataSource.getInstance()));
+        deleteVehicleUseCase.execute(vehicleId);
     }
 }
