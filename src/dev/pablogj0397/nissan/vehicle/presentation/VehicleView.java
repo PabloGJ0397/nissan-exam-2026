@@ -8,9 +8,9 @@ import dev.pablogj0397.nissan.vehicle.domain.Vehicle;
 import java.util.ArrayList;
 
 public class VehicleView {
-    public ArrayList<Vehicle> findAll(){
+    public static void findAll(){
         GetVehiclesUseCase getVehiclesUseCase = new GetVehiclesUseCase(new VehicleDataRepository(VehicleMemLocalDataSource.getInstance()));
         ArrayList<Vehicle> vehicles = getVehiclesUseCase.execute();
-        return vehicles;
+        System.out.println(vehicles);
     }
 }
