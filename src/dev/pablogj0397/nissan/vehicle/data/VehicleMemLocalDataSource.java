@@ -13,7 +13,7 @@ public class VehicleMemLocalDataSource {
     private VehicleMemLocalDataSource(){initData();}
 
     public void initData(){
-       storage.add(new Vehicle("1","Alfa","White","2001", "11.000"));
+
     }
 
     public static VehicleMemLocalDataSource getInstance(){
